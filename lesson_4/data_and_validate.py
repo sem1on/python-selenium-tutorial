@@ -10,5 +10,7 @@ url = "https://www.wikipedia.org/"
 
 driver.get(url=url) 
 
-url_current = driver.current_url
-print(f"URL запрашиваемой страницы: {url_current}.")
+current_url = driver.current_url
+current_title = driver.title
+print(f"URL запрашиваемой страницы: {current_url}.")
+print(f"Title запрашиваемой страницы: {current_title}.")
