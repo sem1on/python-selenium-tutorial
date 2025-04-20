@@ -33,6 +33,13 @@ after = driver.add_cookie({
     "value": "new_value"
 })
 
-pickle.dump(driver.get_cookies(), open(os.getcwd()+"/lesson_14/cookies/cookies.pkl", "wb"))
+pickle.dump(driver.get_cookies(), open(os.getcwd()+"/lesson_14/cookies/cookies.pkl", "wb")) #
 
-print(driver.get_cookie("split"))
+
+driver.delete_all_cookies() #Очистка старых cookies
+cookies = pickle.load(open(os.getcwd()+"/lesson_14/cookies/cookies.pkl", "rb")) # Добавление новых из файла cookies
+for cookie in cookies:
+    driver.add_cookie(cookie)
+
+driver.refresh() # Перезагрузка страницы
+
