@@ -1,4 +1,6 @@
 import time
+import pickle
+import os
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -30,5 +32,7 @@ after = driver.add_cookie({
     "name": "split",
     "value": "new_value"
 })
+
+pickle.dump(driver.get_cookies(), open(os.getcwd()+"/lesson_14/cookies/cookies.pkl", "wb"))
 
 print(driver.get_cookie("split"))
