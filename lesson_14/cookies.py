@@ -15,4 +15,11 @@ driver.get("https://www.freeconferencecall.com/ru")
 
 singl_cookie = driver.get_cookie("country_code") # Получение одной cookie
 all_cookies = driver.get_cookies() # Получение всех cookies
-print(all_cookies)
+
+add_cookie = driver.add_cookie({ # Добавление своих cookies
+    "name": "My_cookie",
+    "value": "21"
+})
+
+my_cookie = driver.get_cookie("My_cookie")
+print(my_cookie)
