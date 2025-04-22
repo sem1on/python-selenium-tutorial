@@ -3,7 +3,6 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver import Keys
 
 
 service = Service(executable_path=ChromeDriverManager().install())
